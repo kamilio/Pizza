@@ -1,4 +1,6 @@
 Pizza::Application.routes.draw do
+  get "home/menu"
+
   resources :users
 
   resources :items
