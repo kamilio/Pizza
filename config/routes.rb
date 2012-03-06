@@ -5,7 +5,7 @@ Pizza::Application.routes.draw do
 
   resources :items
 
-  root :to => "home#index"
+  root :to => "home#menu"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
