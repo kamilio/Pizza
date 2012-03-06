@@ -1,4 +1,6 @@
 Pizza::Application.routes.draw do
+  resources :users
+
   resources :items
 
   root :to => "home#index"
