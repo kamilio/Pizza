@@ -9,6 +9,9 @@ gem 'sqlite3'
 
 gem 'json'
 
+gem 'authlogic'
+gem "rails3-generators"
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -22,6 +25,8 @@ group :assets do
 end
 
 gem 'jquery-rails'
+
+gem "haml"
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

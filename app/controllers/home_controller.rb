@@ -1,8 +1,7 @@
 class HomeController < ApplicationController
-  def home
+  before_filter :require_user
+  
+  def index
     
-  end
-  def menu
-    @items = Item.all
   end
 end
