@@ -12,6 +12,7 @@ gem 'json'
 gem 'authlogic'
 gem "rails3-generators"
 gem "simple-navigation", "~> 3.7.0"
+gem "paperclip", "~> 2.7"
 
 # Gems used only for assets and not required
 # in production environments by default.
