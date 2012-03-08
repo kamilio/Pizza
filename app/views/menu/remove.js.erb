@@ -1,0 +1,3 @@
+var selector = $("#<%= dom_id(@item)%>");
+if (parseInt(selector.html()) > 0)
+	selector.html(parseInt(selector.html())-1);

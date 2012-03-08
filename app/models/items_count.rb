@@ -5,10 +5,12 @@ class ItemsCount < ActiveRecord::Base
   def increment
     self.count += 1
     self.save
+    self
   end
   
   def decrement
     self.count -= 1
     self.save 
+    self
   end
 end

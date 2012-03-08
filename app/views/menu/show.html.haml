@@ -9,12 +9,12 @@
           %br
           = item.description
         %td
-          = @order.get_count_for_item item
-          x
+          %div{:id => dom_id(item) }
+            = @order.get_count_for_item item
           = number_to_currency(item.price)
         %td{:width => "100px"}
           %div{:class => "btn_group"}
-            = link_to "-", menu_remove_path(:item_id => item.id), :class => "btn"
-            = link_to "+", menu_add_path(:item_id => item.id), :class => "btn"
+            = link_to "-", menu_remove_path(:item_id => item.id), :class => "btn", :remote => true
+            = link_to "+", menu_add_path(:item_id => item.id), :class => "btn", :remote => true
 
-%p= link_to "Order now!", order_summary_path(:order_id => @order.id), :class => "btn btn-primary btn-large pull-right"
+%p= link_to "Order now!", order_summary_path(:order_id => @order.id), :class => "btn btn-success btn-large pull-right"

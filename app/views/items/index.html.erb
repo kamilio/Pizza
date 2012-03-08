@@ -11,13 +11,13 @@
   </tr>
 
 <% @items.each do |item| %>
-  <tr>
+  <tr id="<%= dom_id(item) %>">
     <td><%= item.name %></td>
     <td><%= item.description %></td>
     <td><%= item.price %></td>
     <td><%= link_to 'Show', item %></td>
     <td><%= link_to 'Edit', edit_item_path(item) %></td>
-    <td><%= link_to 'Destroy', item, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Destroy', item, :confirm => 'Are you sure?', :method => :delete, :remote => true %></td>
   </tr>
 <% end %>
 </table>
