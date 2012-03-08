@@ -1,0 +1,12 @@
+%h1 Deliveries
+%table{:width => 500}
+  - @orders.each do |order|
+    %tr        
+      %td
+        %strong= order.user.name
+        %br
+        = nl2br(order.user.address).html_safe
+      %td
+        =number_to_currency(order.sum)
+      %td        
+        =link_to "Delivered", stuff_ready_path(:order_id => order.id), :class => "btn"

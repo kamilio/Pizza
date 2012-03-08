@@ -3,12 +3,9 @@ class Order < ActiveRecord::Base
   has_many :items_counts
   has_many :items, :through => :items_counts
   
-  def to_s
-    output = "ORDER" + self.status + " " + self.user.login
-  end
+  # From cart to home
+  :cart; :ordered; :accepted; :ready; :travelling; :delivered
   
-  def get_count_for_item(item)
-  end
   
   def add_item(item)
     if get_items_count(item)
@@ -23,17 +20,24 @@ class Order < ActiveRecord::Base
     count.decrement if count && count.count != 0
   end
   
+  # Item count
   def get_count_for_item(item)
     return get_items_count(item).count if get_items_count(item) 
       0
   end
   
+  # Sum for one order
   def sum
     sum = 0
     self.items_counts.all.each do |count|
       sum += count.count*count.item.price
     end
     sum 
+  end
+  
+  def change_status(status)
+    self.status = status
+    self.save
   end
   
   private

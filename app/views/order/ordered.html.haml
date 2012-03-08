@@ -1,3 +1,9 @@
 %h1 Succesfully ordered
-Your food is on the way to your home
-= @user.login 
+Dear
+= @user.name+", "
+your food is on the way to your home
+
+%h2 Order recapitulation
+= render "list"
+
+You can track your order on this link (TODO)

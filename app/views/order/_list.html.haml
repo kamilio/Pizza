@@ -1,0 +1,12 @@
+%table{:width => 500}  
+  - @order.items_counts.each do |count|
+    %tr
+      %td= count.item.name
+      %td{:align => "right"}
+        =count.count
+        x 
+        =number_to_currency(count.item.price)
+  %tr 
+    %td{:colspan => 2, :align => "right"} _____________
+  %tr
+    %td{:align => "right", :colspan => 2}= number_to_currency(@order.sum)

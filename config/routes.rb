@@ -1,17 +1,34 @@
 Pizza::Application.routes.draw do
+  get "stuff/index"
+
+  get "stuff/accept"
+
+  get "stuff/ready"
+
+  get "delivery/index"
+
+  get "delivery/deliver"
+
+  get "delivery/next"
+
   get "menu/show"
 
   get "menu/add"
 
   get "menu/remove"
+  
+  get "menu/reset"
 
   get "user_sessions/new"
+  
   
   get "order/proceed"
   
   get "order/ordered"
   
   get "order/summary"
+  
+  get "users/register"
 
   resources :users
   

@@ -1,0 +1,8 @@
+%table{:width => 500}
+  %tr
+    %td{:colspan => 2, :align => "right"}
+      %strong= current_user.name
+      %br
+      = nl2br(current_user.address).html_safe
+      %br
+      %br

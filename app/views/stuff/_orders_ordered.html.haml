@@ -1,0 +1,10 @@
+%table{:width => 500}
+  - @orders_ordered.each do |order|
+    %tr
+      %td
+        -order.items_counts.each do |count|
+          =count.item.name
+          =count.count
+          %br
+      %td        
+        =link_to "Accept", stuff_accept_path(:order_id => order.id), :class => "btn"

@@ -17,4 +17,5 @@
             = link_to "-", menu_remove_path(:item_id => item.id), :class => "btn", :remote => true
             = link_to "+", menu_add_path(:item_id => item.id), :class => "btn", :remote => true
 
+-#%p= link_to "Reset", menu_reset_path(:order_id => @order.id), :class => "btn btn-danger btn-large pull-left"
 %p= link_to "Order now!", order_summary_path(:order_id => @order.id), :class => "btn btn-success btn-large pull-right"

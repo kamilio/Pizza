@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
    acts_as_authentic
    
+   easy_roles :roles
+   
    has_many :orders
    
    def cart

@@ -1,0 +1,9 @@
+%h1 Registration
+%br
+= semantic_form_for @user  do |f|
+  = f.input :login
+  = f.input :email
+  = f.input :password
+  = f.input :password_confirmation
+  = f.action :submit, :as => :button
+  

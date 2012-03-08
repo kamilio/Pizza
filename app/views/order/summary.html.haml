@@ -1,22 +1,12 @@
 %h1 Order summary
 - if @order.items.count > 0
   %h2 Address
-  %strong= current_user.name
-  %br
-  = nl2br(current_user.address).html_safe
-  %h2 Invoice
+  
  
-  %table
-    - @order.items.each do |item|
-      %tr
-        %td= item.name
-        %td= number_to_currency(item.price)
-    %tr 
-      %td _______________________________________________
-      %td ________
-    %tr
-      %td
-      %td= number_to_currency(@order.sum)
+  = render "address"
+  %h2 Invoice
+  = render "list"  
+  %table{:width => 500}
     %tr
       %td
         %p= link_to "Back", root_path(:order_id => @order.id), :class => "btn btn-danger btn-large pull-left"
