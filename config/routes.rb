@@ -1,5 +1,17 @@
 Pizza::Application.routes.draw do
+  get "menu/show"
+
+  get "menu/add"
+
+  get "menu/remove"
+
   get "user_sessions/new"
+  
+  get "order/proceed"
+  
+  get "order/ordered"
+  
+  get "order/summary"
 
   resources :users
   
@@ -15,7 +27,7 @@ Pizza::Application.routes.draw do
   match 'logout' => "user_sessions#destroy", :as => :logout
 
 
-  root :to => "home#index"
+  root :to => "menu#show"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
