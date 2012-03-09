@@ -35,7 +35,6 @@ gem "haml"
 
 gem 'execjs'
 gem 'therubyracer', :platforms => :ruby
-gem 'johnson'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

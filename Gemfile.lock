@@ -54,7 +54,6 @@ GEM
     haml (3.1.4)
     hike (1.2.1)
     i18n (0.6.0)
-    johnson (1.2.0)
     journey (1.0.3)
     jquery-rails (2.0.1)
       railties (>= 3.2.0, < 5.0)
@@ -137,7 +136,6 @@ DEPENDENCIES
   formtastic
   formtastic-bootstrap
   haml
-  johnson
   jquery-rails
   json
   paperclip (~> 2.7)
