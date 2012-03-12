@@ -6,8 +6,8 @@ class MenuController < ApplicationController
     @order = current_user.cart    
   end
 
-  def add
-    @item = Item.find(params[:item_id])
+  def create
+    @item = Item.find(params[:id])
     current_user.cart.add_item @item
     respond_to do |format|
       format.html {redirect_to :action => :show}
@@ -15,8 +15,8 @@ class MenuController < ApplicationController
     end
   end
 
-  def remove
-    @item = Item.find(params[:item_id])
+  def destroy
+    @item = Item.find(params[:id])
     current_user.cart.remove_item @item 
     respond_to do |format|
       format.html {redirect_to :action => :show}

@@ -11,7 +11,7 @@ class Order < ActiveRecord::Base
     if get_items_count(item)
       get_items_count(item).increment
     else
-      self.items_counts.create(:order => self, :item => item)
+      self.items << item # _counts.create(:order => self, :item => item)
     end
   end
   
