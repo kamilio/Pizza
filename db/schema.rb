@@ -22,9 +22,6 @@ ActiveRecord::Schema.define(:version => 20120308154830) do
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
-    t.binary   "photo"
-    t.string   "photo_type"
-    t.string   "photo_filename"
   end
 
   create_table "items_counts", :force => true do |t|
@@ -42,8 +39,12 @@ ActiveRecord::Schema.define(:version => 20120308154830) do
     t.datetime "updated_at", :null => false
   end
 
-# Could not dump table "orders" because of following StandardError
-#   Unknown type 'reference' for column 'user_id'
+  create_table "orders", :force => true do |t|
+    t.string   "status"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.integer  "user_id"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "login",                                    :null => false
