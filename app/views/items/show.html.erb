@@ -16,9 +16,6 @@
 </p>
 
 <%= image_tag @item.photo.url %>
-<%= image_tag @item.photo.url(:medium) %>
-<%= image_tag @item.photo.url(:thumb) %>
-
 
 <%= link_to 'Edit', edit_item_path(@item) %> |
 <%= link_to 'Back', items_path %>

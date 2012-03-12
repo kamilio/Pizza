@@ -29,6 +29,7 @@ Pizza::Application.routes.draw do
   get "order/summary"
   
   get "users/register"
+  get "users/account"
 
   resources :users
   

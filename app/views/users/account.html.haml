@@ -1,0 +1,6 @@
+%h1 Account settings
+
+= semantic_form_for @user  do |f|
+  = f.input :name
+  = f.input :address, :input_html => { :class => 'autogrow', :rows => 5  }
+  = f.action :submit, :as => :button

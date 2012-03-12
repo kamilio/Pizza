@@ -8,6 +8,10 @@ class User < ActiveRecord::Base
    def cart
       self.orders.find_or_create_by_status("cart")
    end
+   
+   def address?
+     defined?(self.addresss) && defined?(self.name)
+   end
 
    private
 end
