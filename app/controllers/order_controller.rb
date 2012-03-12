@@ -7,7 +7,7 @@ class OrderController < ApplicationController
     order.save
     redirect_to order_ordered_path(:order_id => params[:order_id])
   end
-  def summary
+  def summary    
     @order = Order.find(params[:order_id])
   end
   
