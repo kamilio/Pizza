@@ -1,4 +1,6 @@
 class OrderController < ApplicationController
+  before_filter :require_address
+ 
   def proceed
     order = Order.find(params[:order_id])
     order.status = :ordered 

@@ -29,4 +29,11 @@ class ApplicationController < ActionController::Base
         return false
       end
     end
+    
+    def require_address
+      unless current_user.has_address?
+        flash[:notice] = "Fill the address and full name"
+        redirect_to edit_user_path(current_user)
+      end
+    end
 end
