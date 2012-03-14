@@ -2,11 +2,10 @@
 # Configures your navigation
 SimpleNavigation::Configuration.run do |navigation|
   navigation.items do |primary|
-    if current_user
-      primary.item :items, 'Items', items_path
-      primary.item :stuff, "Stuff", stuff_index_path
-      primary.item :delivery, "Delivery", delivery_index_path
-    end
+      #abort current_user.has_role?("stuff")
+      primary.item :items, 'Items', items_path if can? :destroy, Order
+      primary.item :stuff, "Stuff", stuff_index_path if can? :destroy, Order
+      primary.item :delivery, "Delivery", delivery_index_path if can? :destroy, Order
   end
 
 end

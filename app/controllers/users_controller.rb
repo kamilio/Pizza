@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  load_and_authorize_resource
   
   def new
     @user = User.new
@@ -18,10 +19,10 @@ class UsersController < ApplicationController
     end
   end
 
-  # POST /users
-  # POST /users.json
+  # Register user
   def create
     @user = User.new(params[:user])
+    @user.roles << "registered"
 
     respond_to do |format|
       if @user.save
@@ -34,8 +35,7 @@ class UsersController < ApplicationController
     end
   end
 
-  # PUT /users/1
-  # PUT /users/1.json
+  # Save adddress
   def update
     @user = User.find(params[:id])
 

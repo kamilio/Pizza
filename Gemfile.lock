@@ -43,6 +43,7 @@ GEM
       uuidtools (~> 2.1)
     bootstrap-sass (2.0.1)
     builder (3.0.0)
+    cancan (1.6.7)
     cocaine (0.2.1)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
@@ -78,7 +79,7 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.17.2)
     multi_json (1.1.0)
-    multi_xml (0.4.1)
+    multi_xml (0.4.2)
     nokogiri (1.5.0)
     paperclip (2.7.0)
       activerecord (>= 2.3.0)
@@ -148,6 +149,7 @@ DEPENDENCIES
   aws-s3
   aws-sdk
   bootstrap-sass (~> 2.0.1)
+  cancan
   coffee-rails (~> 3.2.1)
   easy_roles
   execjs

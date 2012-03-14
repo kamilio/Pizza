@@ -9,10 +9,25 @@ class User < ActiveRecord::Base
       self.orders.find_or_create_by_status("cart")
    end
    
-   def has_address?
-     defined?(address) && defined?(name)
+   def to_s
+     login + "->" + roles.to_s
+   end
+   
+   def blank_address?
+     address.blank? && name.blank?
+   end
+   
+   def admin?
+     has_role? "admin"
+   end
+   
+   def stuff?
+     has_role? "stuff"
    end
 
-   private
+  def registered?
+     has_role? "registered"
+  end
+
 end
 

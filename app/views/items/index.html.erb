@@ -23,5 +23,7 @@
 </table>
 
 <br />
-
+<% if can? :show, Item %>
 <%= link_to 'New Item', new_item_path %>
+<% end %>
+

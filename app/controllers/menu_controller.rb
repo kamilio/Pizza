@@ -1,4 +1,6 @@
 class MenuController < ApplicationController
+  load_and_authorize_resource :order
+  
   before_filter :require_user
     
   def show

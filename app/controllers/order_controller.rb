@@ -1,5 +1,6 @@
 class OrderController < ApplicationController
   before_filter :require_address
+  load_and_authorize_resource :order
  
   def proceed
     order = Order.find(params[:order_id])

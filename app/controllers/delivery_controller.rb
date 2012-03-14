@@ -1,4 +1,5 @@
 class DeliveryController < ApplicationController
+  load_and_authorize_resource :order
   def index
     @orders = Order.find_all_by_status(:ready)
   end

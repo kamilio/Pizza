@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  check_authorization  
   protect_from_forgery
   
   helper_method :current_user_session, :current_user
@@ -31,9 +32,16 @@ class ApplicationController < ActionController::Base
     end
     
     def require_address
-      unless current_user.has_address?
+      if current_user.blank_address?
         flash[:notice] = "Fill the address and full name"
         redirect_to edit_user_path(current_user)
       end
+    end
+    
+    rescue_from CanCan::AccessDenied do |exception|
+      #abort("Not allowed #{current_user.to_s} Access denied on #{exception.action} #{exception.subject.inspect}" )
+      flash[:error] = "Access denied."
+      redirect_to login_path
+      
     end
 end

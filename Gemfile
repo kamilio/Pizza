@@ -16,6 +16,7 @@ end
 gem 'json'
 
 gem 'authlogic'
+gem 'cancan'
 gem "rails3-generators"
 gem "simple-navigation", "~> 3.7.0"
 gem "paperclip", "~> 2.7"
