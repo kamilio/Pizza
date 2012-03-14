@@ -4,9 +4,9 @@ class DeliveryController < ApplicationController
     @orders = Order.find_all_by_status(:ready)
   end
 
-  def deliver
-    order = Order.find_by_id(params[:order_id])
+  def destroy
+    order = Order.find_by_id(params[:id])
     order.change_status(:delivered)
-    redirect_to delivery_index
+    redirect_to delivery_index_path
   end
 end

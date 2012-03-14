@@ -18,9 +18,9 @@ class Ability
   end
   
   def stuff
+    registered
     can :manage, Item
     can :manage, Order
-    registered
   end
   
   def admin

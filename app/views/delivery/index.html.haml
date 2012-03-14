@@ -9,4 +9,4 @@
       %td
         =number_to_currency(order.sum)
       %td        
-        =link_to "Delivered", stuff_ready_path(:order_id => order.id), :class => "btn"
+        =link_to "Delivered", delivery_path(order), :method => "delete", :class => "btn"

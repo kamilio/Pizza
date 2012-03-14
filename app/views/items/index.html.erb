@@ -1,12 +1,10 @@
 <h1>Listing items</h1>
 
-<table class="table table-bordered">
+<table class="table table-striped">
   <tr>
     <th>Name</th>
     <th>Description</th>
     <th>Price</th>
-    <th></th>
-    <th></th>
     <th></th>
   </tr>
 
@@ -15,9 +13,10 @@
     <td><%= item.name %></td>
     <td><%= item.description %></td>
     <td><%= item.price %></td>
-    <td><%= link_to 'Show', item %></td>
-    <td><%= link_to 'Edit', edit_item_path(item) %></td>
-    <td><%= link_to 'Destroy', item, :confirm => 'Are you sure?', :method => :delete, :remote => true %></td>
+    <td width="200">
+      <%= link_to 'Show', item, :class=>"btn btn-info" %>
+      <%= link_to 'Edit', edit_item_path(item), :class=>"btn btn-warning" %>
+      <%= link_to 'Destroy', item, :confirm => 'Are you sure?', :method => :delete, :class=>"btn btn-danger"  %></td>
   </tr>
 <% end %>
 </table>

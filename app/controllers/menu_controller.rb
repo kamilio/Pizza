@@ -6,6 +6,10 @@ class MenuController < ApplicationController
   def show
     @items = Item.all
     @order = current_user.cart    
+    
+    respond_to do |format|
+      format.html {render :layout => "menu"}
+    end
   end
 
   def create
