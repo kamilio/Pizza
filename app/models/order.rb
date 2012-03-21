@@ -8,31 +8,24 @@ class Order < ActiveRecord::Base
   
   
   def add_item(item)
-    if get_items_count(item)
-      get_items_count(item).increment
-    else
-      self.items << item # _counts.create(:order => self, :item => item)
-    end
+    get_or_create_items_count(item).increment
   end
   
   def remove_item(item)
-    count = get_items_count(item)
-    count.decrement if count && count.count != 0
+    count = get_or_create_items_count(item)
+    count.decrement if count.count != 0
   end
   
   # Item count
   def get_count_for_item(item)
-    return get_items_count(item).count if get_items_count(item) 
-      0
+    get_or_create_items_count(item).count
   end
   
   # Sum for one order
   def sum
     sum = 0
-    self.items_counts.all.each do |count|
-      sum += count.count*count.item.price
-    end
-    sum 
+    self.items_counts.all.each { |count| sum += count.count*count.item.price }
+    return sum 
   end
   
   def change_status(status)
@@ -41,6 +34,11 @@ class Order < ActiveRecord::Base
   end
   
   private
+  def get_or_create_items_count(item)
+    self.items << item unless get_items_count(item)
+    return get_items_count(item)
+  end
+  
   def get_items_count(item)
     self.items_counts.find_by_item_id(item.id)
   end

@@ -1,0 +1,6 @@
+= semantic_form_for(@item, :multipart => true) do |f|
+  = f.input :name
+  = f.input :description
+  = f.input :price, :as => :number
+  = f.input :photo
+  = f.action :submit

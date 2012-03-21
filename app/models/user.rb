@@ -5,13 +5,12 @@ class User < ActiveRecord::Base
    
    has_many :orders
    
+   validates :login, :length => { :maximum => 30}
+   
    def cart
       self.orders.find_or_create_by_status("cart")
    end
    
-   def to_s
-     login + "->" + roles.to_s
-   end
    
    def blank_address?
      address.blank? && name.blank?
@@ -28,6 +27,5 @@ class User < ActiveRecord::Base
   def registered?
      has_role? "registered"
   end
-
 end
 

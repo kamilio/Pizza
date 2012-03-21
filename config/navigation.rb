@@ -7,5 +7,4 @@ SimpleNavigation::Configuration.run do |navigation|
       primary.item :stuff, "Stuff", stuff_index_path if can? :destroy, Order
       primary.item :delivery, "Delivery", delivery_index_path if can? :destroy, Order
   end
-
 end

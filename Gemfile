@@ -2,22 +2,30 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.2'
 
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
-
 # for Heroku deployment - as described in Ap. A of ELLS book
 group :development, :test do
   gem 'sqlite3'
+  gem 'rspec'
+  gem 'rspec-rails',      ">= 2.0.0.beta"
+  gem 'factory_girl'
 end
+
+group :test do
+end
+
+group :development do
+  gem 'annotation'
+  gem "rails3-generators"
+end
+
 group :production do
   gem 'pg'
 end
 
 gem 'json'
-
 gem 'authlogic'
 gem 'cancan'
-gem "rails3-generators"
+
 gem "simple-navigation", "~> 3.7.0"
 gem "paperclip", "~> 2.7"
 gem 'easy_roles'

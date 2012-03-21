@@ -3,7 +3,7 @@ class CreateItemsCounts < ActiveRecord::Migration
     create_table :items_counts do |t|
       t.integer :order_id
       t.integer :item_id
-      t.integer :count, :default => 1
+      t.integer :count, :default => 0
 
       t.timestamps
     end
