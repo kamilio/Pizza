@@ -18,17 +18,27 @@ FactoryGirl.define do
     login
     password 'kamil'
     password_confirmation 'kamil'
+    roles ["admin"]
     
     factory :guest do
-      roles [:guest]
+      login "guest"
+      password "guest"
+      password_confirmation "guest"
+      roles ["guest"]
     end
     
     factory :stuff do
-      roles [:stuff]
+      login "stuff"
+      password "stuff"
+      password_confirmation "stuff"
+      roles ["stuff"]
     end
     
     factory :admin do
-      roles [:admin]
+      login "admin"
+      password "admin"
+      password_confirmation "admin"
+      roles ["admin"]
     end
   end
 end

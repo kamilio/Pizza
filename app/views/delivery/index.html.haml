@@ -1,6 +1,6 @@
-%h1 Deliveries
-%table{:width => 500}
-  - @orders.each do |order|
+%h1 Waiting in shop
+%table{:class=>"table"}
+  - @orders_ready.each do |order|
     %tr        
       %td
         %strong= order.user.name
@@ -8,5 +8,19 @@
         = nl2br(order.user.address).html_safe
       %td
         =number_to_currency(order.sum)
-      %td        
+      %td{:width=>"150"}        
+        =link_to "Load", delivery_path(order), :method => "put", :class => "btn"
+
+%h1 Deliveries
+%table{:class=>"table"}
+  - @orders_taken.each do |order|
+    %tr        
+      %td
+        %strong= order.user.name
+        %br
+        = nl2br(order.user.address).html_safe
+      %td
+        =number_to_currency(order.sum)
+      %td{:width=>"150"}      
         =link_to "Delivered", delivery_path(order), :method => "delete", :class => "btn"
+       

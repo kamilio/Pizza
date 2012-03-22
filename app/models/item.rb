@@ -6,6 +6,7 @@ class Item < ActiveRecord::Base
    validates :price, :format => { :with => /^\d+??(?:\.\d{0,2})?$/ }, 
       :numericality => {:greater_than_or_equal_to => 0}
       
+      
    has_attached_file :photo, :styles => {:menu => "100x100"},
      :storage => :s3,
      :bucket => 'pizza-bestellung',

@@ -39,9 +39,8 @@ class ApplicationController < ActionController::Base
     end
     
     rescue_from CanCan::AccessDenied do |exception|
-      #abort("Not allowed #{current_user.to_s} Access denied on #{exception.action} #{exception.subject.inspect}" )
+      abort("Not allowed #{current_user.to_s} #{current_user.roles.inspect} Access denied on #{exception.action} #{exception.subject.inspect}" )
       flash[:error] = "Access denied."
       redirect_to login_path
-      
     end
 end

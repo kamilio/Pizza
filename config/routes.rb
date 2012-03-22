@@ -1,9 +1,8 @@
 Pizza::Application.routes.draw do
   get "stuff/index"
-
   get "stuff/accept"
-
   get "stuff/ready"
+  get "stuff/refuse"
   
   resources(:menu, :only => [:show, :create, :destroy] ) do 
     get "reset", :to => "menu#reset"
@@ -20,7 +19,7 @@ Pizza::Application.routes.draw do
 
   resources(:users, :only => [:create, :add, :update, :edit, :new] ) 
   
-  resources(:delivery, :only => [:index, :destroy])
+  resources(:delivery, :only => [:index, :destroy, :update])
   
   resources :order do
     resources :items

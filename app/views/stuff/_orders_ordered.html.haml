@@ -1,4 +1,4 @@
-%table{:width => 500}
+%table{:class=>"table"}
   - @orders_ordered.each do |order|
     %tr
       %td
@@ -6,5 +6,6 @@
           =count.item.name
           =count.count
           %br
-      %td        
+      %td{:width=>"150"}   
+        =link_to "Refuse", stuff_refuse_path(:order_id => order.id), :confirm => "Are you sure?", :class => "btn btn-danger"     
         =link_to "Accept", stuff_accept_path(:order_id => order.id), :class => "btn"

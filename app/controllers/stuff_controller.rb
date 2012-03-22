@@ -8,13 +8,19 @@ class StuffController < ApplicationController
 
   def accept
     order = Order.find_by_id(params[:order_id])
-    order.change_status(:accepted)
+    order.accept
     redirect_to stuff_index_path
   end
 
   def ready
     order = Order.find_by_id(params[:order_id])
-    order.change_status(:ready)
+    order.finish
+    redirect_to stuff_index_path
+  end
+  
+  def refuse
+    order = Order.find_by_id(params[:order_id])
+    order.refuse
     redirect_to stuff_index_path
   end
 end

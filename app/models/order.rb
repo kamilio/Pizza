@@ -1,11 +1,41 @@
+require "state_machine"
 class Order < ActiveRecord::Base
   belongs_to :user
   has_many :items_counts
   has_many :items, :through => :items_counts
   
   # From cart to home
-  :cart; :ordered; :accepted; :ready; :travelling; :delivered
+  #:cart; :ordered; :accepted; :ready; :travelling; :delivered
   
+  state_machine :status, :initial => :cart do
+    event :order do
+      transition :cart => :ordered
+    end
+    
+    event :cancel do
+      transition :cart => :cart
+    end
+    
+    event :accept do
+      transition :ordered => :accepted
+    end
+    
+    event :finish do
+      transition :accepted => :ready
+    end
+    
+    event :refuse do
+      transition :ordered => :refused
+    end
+    
+    event :take do 
+      transition :ready => :taken
+    end
+    
+    event :deliver do
+      transition :taken => :delivered
+    end
+  end
   
   def add_item(item)
     get_or_create_items_count(item).increment

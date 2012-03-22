@@ -5,12 +5,17 @@ gem 'rails', '3.2.2'
 # for Heroku deployment - as described in Ap. A of ELLS book
 group :development, :test do
   gem 'sqlite3'
-  gem 'rspec'
-  gem 'rspec-rails',      ">= 2.0.0.beta"
-  gem 'factory_girl'
 end
 
 group :test do
+  gem 'rspec'
+  gem 'rspec-rails',      ">= 2.0.0.beta"
+  gem 'accept_values_for'
+  gem "webrat"
+  gem "cucumber"
+  gem 'capybara'
+  gem "cucumber-rails"
+  gem 'database_cleaner'
 end
 
 group :development do
@@ -25,12 +30,15 @@ end
 gem 'json'
 gem 'authlogic'
 gem 'cancan'
+gem 'factory_girl'
 
 gem "simple-navigation", "~> 3.7.0"
 gem "paperclip", "~> 2.7"
 gem 'easy_roles'
 gem 'formtastic'
 gem 'formtastic-bootstrap'
+gem 'state_machine'
+gem 'ruby-graphviz', :require => 'graphviz'
 
 # Gems used only for assets and not required
 # in production environments by default.
