@@ -4,6 +4,9 @@ class OrderController < ApplicationController
   
   def summary   
     @order = Order.find(params[:order_id])
+    
+    redirect_to root_path, :notice => "Please, order something!" unless @order.has_items?
+    
     if Shop.closed?
       @order.cancel 
       redirect_to root_path

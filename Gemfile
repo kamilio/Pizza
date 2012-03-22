@@ -5,13 +5,14 @@ gem 'rails', '3.2.2'
 # for Heroku deployment - as described in Ap. A of ELLS book
 group :development, :test do
   gem 'sqlite3'
+  gem 'ruby-debug'
 end
 
 group :test do
   gem 'rspec'
   gem 'rspec-rails',      ">= 2.0.0.beta"
   gem 'accept_values_for'
-  gem "webrat"
+#  gem "webrat"
   gem "cucumber"
   gem 'capybara'
   gem "cucumber-rails"

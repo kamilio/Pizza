@@ -37,6 +37,13 @@ class Order < ActiveRecord::Base
     end
   end
   
+  def has_items?
+    self.items.each do |item| 
+      return true if get_items_count(item).count > 1 
+    end
+    return false
+  end
+  
   def add_item(item)
     get_or_create_items_count(item).increment
   end

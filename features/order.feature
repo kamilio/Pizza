@@ -9,9 +9,12 @@ Background: Items have been added to DB
   | Pizza Margherita | Awesome Pizza | 5.5   |
   | Pasta Carbonara  | Awesome Pasta | 4.6   |
   
-  And I am a logged user
-  And I am on the home page
+  Given I am the registered user
+  And I am on login page
+  When I login with valid credentials
+  Then I should be on the home page
+  And I should see "Login successful!"
   
 Scenario: Customer orders empty order
   When I press "Order now!"
-  Then I should see error notice
+  Then I should see "Please, order something!"

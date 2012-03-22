@@ -20,6 +20,7 @@ describe MenuController do
       activate_authlogic
       @user = FactoryGirl.create(:user) 
       UserSession.create(@user)
+      controller.stub(:current_user).and_return(@user)
     end
     
     it "should be succesfull" do
@@ -28,8 +29,13 @@ describe MenuController do
     end
     
     it "should get a cart for current user" do
-      get :show
       @user.should_receive(:cart)
+      get :show
+    end
+    
+    it "should ask for all items" do
+      Item.should_receive(:all)
+      get :show
     end
   end
 end
