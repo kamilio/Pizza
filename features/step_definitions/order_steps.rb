@@ -14,6 +14,5 @@ end
 
 When /^I press "([^"]*)"$/ do |button|
   click_on(button)
-  debugger
 end
 

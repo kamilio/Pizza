@@ -19,6 +19,8 @@ FactoryGirl.define do
     password 'kamil'
     password_confirmation 'kamil'
     roles ["admin"]
+    name "Herr Admin"
+    address "Tada\nNana"
     
     factory :guest do
       login "guest"
