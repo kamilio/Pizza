@@ -38,9 +38,7 @@ class Order < ActiveRecord::Base
   end
   
   def has_items?
-    self.items.each do |item| 
-      return true if get_items_count(item).count > 1 
-    end
+    self.items.each { |item| return true if get_items_count(item).count > 0 } 
     return false
   end
   
@@ -55,7 +53,8 @@ class Order < ActiveRecord::Base
   
   # Item count
   def get_count_for_item(item)
-    get_or_create_items_count(item).count
+    return get_items_count(item).count if get_items_count(item)
+    return 0
   end
   
   # Sum for one order

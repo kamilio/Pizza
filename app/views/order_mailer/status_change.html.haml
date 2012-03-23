@@ -1,0 +1,16 @@
+Hello
+= @order.user.name
+%br
+%br
+Status of your order has just changed to 
+%strong= @order.status
+%br
+%br
+Prepare your money for delivery 
+%strong= number_to_currency(@order.sum)
+%br
+%br
+Cool ah?
+%br
+%br
+Have a great day
