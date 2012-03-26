@@ -14,6 +14,7 @@ class Ability
     can :manage, UserSession, :user_id => @user.id
     can :manage, User, :id => @user.id
     can :manage, Order, :user_id => @user.id
+    can :create, Order
     cannot :destroy, Order
   end
   

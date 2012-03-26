@@ -1,9 +1,9 @@
 require "state_machine"
 class Order < ActiveRecord::Base
   belongs_to :user
-  has_many :items_counts
+  has_many :items_counts, :dependent => :destroy
   has_many :items, :through => :items_counts
-  has_many :order_histories
+  has_many :order_histories, :dependent => :destroy
   
   # From cart to home
   #:cart; :ordered; :accepted; :ready; :travelling; :delivered

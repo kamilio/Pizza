@@ -1,4 +1,8 @@
-- @history.each do |i|
-  = i.from
-  \->
-  = i.to
+%h1 Order tracking
+%table{:class=>"table"} 
+  - @history.each do |i|
+    %tr
+      %td= i.created_at
+      %td= i.from
+      %td ->
+      %td= i.to

@@ -1,4 +1,12 @@
-- @orders.each do |order|
-  = order.status
-  = link_to "Track", tracking_path(order)
-  %br
+%h1 Orders
+%table{:class=>"table"}
+  %th Date
+  %th Status
+  %th
+  - @orders.each do |order|
+    %tr
+      %td= order.updated_at
+      %td
+        = order.status
+      %td{:width => "200"}
+        = link_to "Track", tracking_path(order), :class=>"btn btn-success"

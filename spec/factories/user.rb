@@ -22,11 +22,11 @@ FactoryGirl.define do
     name "Herr Admin"
     address "Tada\nNana"
     
-    factory :guest do
-      login "guest"
-      password "guest"
-      password_confirmation "guest"
-      roles ["guest"]
+    factory :registered do
+      login "registered"
+      password "registered"
+      password_confirmation "registered"
+      roles ["registered"]
     end
     
     factory :stuff do
