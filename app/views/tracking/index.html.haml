@@ -1,0 +1,4 @@
+- @orders.each do |order|
+  = order.status
+  = link_to "Track", tracking_path(order)
+  %br

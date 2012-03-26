@@ -27,5 +27,14 @@ class User < ActiveRecord::Base
   def registered?
      has_role? "registered"
   end
+  
+  # dealing with current user
+  def self.current
+    Thread.current[:user]
+  end
+  
+  def self.current=(user)
+    Thread.current[:user] = user
+  end
 end
 

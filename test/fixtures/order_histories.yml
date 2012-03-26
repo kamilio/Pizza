@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  order_id: 1
+  user_id: 1
+  transition: MyString
+  from: MyString
+  to: MyString
+
+two:
+  order_id: 1
+  user_id: 1
+  transition: MyString
+  from: MyString
+  to: MyString

@@ -9,12 +9,20 @@ Background: Items have been added to DB
   | Pizza Margherita | Awesome Pizza | 5.5   |
   | Pasta Carbonara  | Awesome Pasta | 4.6   |
   
-  Given I am the registered user
-  And I am on login page
-  When I login with valid credentials
-  Then I should be on the home page
-  And I should see "Login successful!"
+  Given I log in
   
 Scenario: Customer orders empty order
   When I press "Order now!"
   Then I should see "Please, order something!"
+  
+Scenario: I create a Pizza order
+  When I press "+"
+  And I press "Order now!"
+  Then I should see "Order summary"
+  
+Scenario: I order a Pizzas
+  When I press "+"
+  And I press "Order now!"
+  And I press "Order"
+  Then I should see "Succesfully ordered"
+  

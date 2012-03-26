@@ -3,6 +3,7 @@ class Order < ActiveRecord::Base
   belongs_to :user
   has_many :items_counts
   has_many :items, :through => :items_counts
+  has_many :order_histories
   
   # From cart to home
   #:cart; :ordered; :accepted; :ready; :travelling; :delivered

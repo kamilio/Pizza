@@ -1,4 +1,6 @@
 Pizza::Application.routes.draw do
+  resources(:tracking, :only => [:index, :show])
+
   get "stuff/index"
   get "stuff/accept"
   get "stuff/ready"

@@ -41,11 +41,4 @@ describe Order do
     @x.times { @order.remove_item @item }
     @order.get_count_for_item(@item).should == 0
   end
-  
-  it "should send the email after order the order" do
-    @x.times { @order.add_item @item }
-    OrderMailer.should_receive(:status_change).with(@order)
-    @order.order
-  end
-  
 end

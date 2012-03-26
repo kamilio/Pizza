@@ -6,6 +6,9 @@ gem 'rails', '3.2.2'
 group :development, :test do
   gem 'sqlite3'
   gem 'ruby-debug'
+  gem 'launchy'
+  #gem 'ruby-graphviz', :require => 'graphviz'
+  gem "rails-erd"
 end
 
 group :test do
@@ -16,7 +19,9 @@ group :test do
   gem "cucumber"
   gem 'capybara'
   gem "cucumber-rails"
+  gem 'cucumber-rails-training-wheels'
   gem 'database_cleaner'
+  #gem 'simplecov', :require => false
 end
 
 group :development do
@@ -39,7 +44,6 @@ gem 'easy_roles'
 gem 'formtastic'
 gem 'formtastic-bootstrap'
 gem 'state_machine'
-gem 'ruby-graphviz', :require => 'graphviz'
 
 # Gems used only for assets and not required
 # in production environments by default.
