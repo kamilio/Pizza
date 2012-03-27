@@ -3,7 +3,7 @@ require 'spec_helper'
 describe User do
   it "should create a new instance" do
     User.all.each {|user| puts user.email}
-    user = FactoryGirl.build(:guest)
+    user = FactoryGirl.build(:registered)
     user.should be_valid
   end
   

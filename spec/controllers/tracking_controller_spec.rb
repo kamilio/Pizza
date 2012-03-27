@@ -18,10 +18,6 @@ describe TrackingController do
       do_get
       response.should render_template("index")
     end
-    it "should get all orders for user" do
-      Order.should_receive(:find_by_user_id).with(@user.id)
-      do_get
-    end
   end
   
   describe "GET show" do
@@ -41,11 +37,6 @@ describe TrackingController do
     it "should show tracking page for one order" do
       do_get
       response.should render_template("show")
-    end
-    
-    it "should get whole history for order" do
-      Order.should_receive(:find).with(@order.id)
-      do_get
     end
   end
 end
