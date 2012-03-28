@@ -19,10 +19,10 @@ Scenario: I create a Pizza order
   When I press "+"
   And I press "Order now!"
   Then I should see "Order summary"
-  
+
 Scenario: I order a Pizzas
   When I press "+"
   And I press "Order now!"
-  And I press "Order"
+  And I press "Order!"
   Then I should see "Succesfully ordered"
   
