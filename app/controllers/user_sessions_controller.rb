@@ -14,7 +14,7 @@ class UserSessionsController < ApplicationController
       flash[:notice] = "Login successful!"
       redirect_to root_path
     else
-      flash[:notice] = "Login not succesfull"
+      flash.now[:error] = "Invalid login and password combination"
       render :action => :new
     end
   end
